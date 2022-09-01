@@ -1,22 +1,11 @@
 import React from 'react';
-import {
-  Box,
-  Grommet,
-} from 'grommet';
+import { Box, Grommet } from 'grommet';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { customTheme } from './theme';
 
-import {
-  Footer,
-  Header,
-  ScrollToTop,
-} from './components';
+import { Footer, Header } from './components';
 
 import {
   Intro,
@@ -26,41 +15,27 @@ import {
 } from './screens';
 
 const App = () => (
-  <Grommet theme={customTheme} full>
+  <Grommet theme={customTheme} full="min">
     <Router>
-      <ScrollToTop>
-        <Box gap="medium" pad={{ top: 'large', horizontal: 'large', bottom: 'medium' }} style={{ minHeight: '100vh' }}>
-          <Header />
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={props => (
-                <Intro {...props} />
-              )}
-            />
-            <Route
-              path="/search/"
-              render={props => (
-                <SearchResultsScreen {...props} />
-              )}
-            />
-            <Route
-              path="/how-it-works"
-              render={props => (
-                <HowItWorks {...props} />
-              )}
-            />
-            <Route
-              path="/:id"
-              render={props => (
-                <PhotoDetailsScreen {...props} />
-              )}
-            />
-          </Switch>
-          <Footer />
-        </Box>
-      </ScrollToTop>
+      <Box gap="medium" style={{ minHeight: '100vh' }}>
+        <Header />
+        <Switch>
+          <Route exact path="/" render={props => <Intro {...props} />} />
+          <Route
+            path="/search/"
+            render={props => <SearchResultsScreen {...props} />}
+          />
+          <Route
+            path="/how-it-works"
+            render={props => <HowItWorks {...props} />}
+          />
+          <Route
+            path="/:id"
+            render={props => <PhotoDetailsScreen {...props} />}
+          />
+        </Switch>
+        <Footer />
+      </Box>
     </Router>
   </Grommet>
 );

@@ -1,66 +1,48 @@
-import React, { Component } from 'react';
-import {
-  withRouter,
-} from 'react-router-dom';
-import {
-  TextInput, Box, FormField, Button,
-} from 'grommet';
+import React, { useState } from 'react';
+import { withRouter, useHistory } from 'react-router-dom';
+import { TextInput, Box, Form, FormField, Button } from 'grommet';
 import { Search } from 'grommet-icons';
 import PropTypes from 'prop-types';
 
-class SearchForm extends Component {
-  state = {
-    searchTerm: '',
-  }
+const SearchForm = ({ props }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const history = useHistory();
 
-  onInputChange = (event) => {
-    this.setState({ searchTerm: event.target.value.trim() });
-  }
+  const handleInputChange = event => {
+    setSearchTerm(event.target.value.trim());
+  };
 
-  onFormSubmit = (event) => {
+  const onSubmit = event => {
     event.preventDefault();
-
-    if (this.state.searchTerm.length < 1) {
-      return;
+    if (searchTerm.length) {
+      setSearchTerm('');
+      history.push({
+        pathname: '/search/',
+        search: `${searchTerm}`,
+      });
     }
-    // This clears the value in the input
-    // so the placeholder returns
-    this.setState({
-      searchTerm: '',
-    }, this.props.history.push({
-      pathname: '/search/',
-      search: `${this.state.searchTerm}`,
-    }));
-  }
+  };
 
-  render() {
-    const { searchTerm } = this.state;
-    return (
-      <Box>
-        <form onSubmit={this.onFormSubmit}>
-          <Box direction="row" align="stretch">
-            <Box width="100%">
-              <FormField htmlFor="search">
-                <TextInput
-                  type="text"
-                  id="search"
-                  name="search"
-                  value={searchTerm}
-                  placeholder="Search Unsplash..."
-                  onChange={this.onInputChange}
-                />
-              </FormField>
-            </Box>
-
-            <Button type="submit">
-              <Search size="medium" color="dark-2" />
-            </Button>
-          </Box>
-        </form>
+  return (
+    <Form onSubmit={onSubmit}>
+      <Box align="center" direction="row" gap="small">
+        <FormField htmlFor="search" name="search">
+          <TextInput
+            type="text"
+            id="search"
+            name="search"
+            value={searchTerm}
+            placeholder="Search Unsplash"
+            onChange={handleInputChange}
+          />
+        </FormField>
+        <Button type="submit">
+          <Search />
+        </Button>
       </Box>
-    );
-  }
-}
+    </Form>
+  );
+};
 
 export default withRouter(SearchForm);
 
