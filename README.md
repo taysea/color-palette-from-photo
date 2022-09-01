@@ -1,5 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/80952d27-f6c6-4b19-ba21-21a0a16c5461/deploy-status)](https://app.netlify.com/sites/color-palette-generator/deploys)
 
+# color-palette-from-photo
+
 ## About
 
 Let photos you like help you find the right color palette for your project. You can browse automatically loaded photos or search for specific photos. When an image is clicked on, the dominant 6 colors are extracted and displayed, allowing you to copy and paste these HEX codes directly into your project. 
