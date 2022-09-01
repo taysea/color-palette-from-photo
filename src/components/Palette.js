@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Box, Button, ResponsiveContext, Text } from 'grommet';
+import { Box, Button, ResponsiveContext, Spinner, Text } from 'grommet';
 import { ColorExtractor } from 'react-color-extractor';
 import copy from 'copy-to-clipboard';
 import PropTypes from 'prop-types';
@@ -47,7 +47,11 @@ const Palette = props => {
 
   switch (loadingStatus) {
     case STATUSES.LOADING:
-      return <Box fill justify="center" align="center" />;
+      return (
+        <Box>
+          <Spinner />
+        </Box>
+      );
     case STATUSES.SUCCESS:
       return (
         <Box
