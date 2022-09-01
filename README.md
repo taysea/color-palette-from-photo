@@ -1,6 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/80952d27-f6c6-4b19-ba21-21a0a16c5461/deploy-status)](https://app.netlify.com/sites/color-palette-generator/deploys)
 
-# color-palette-from-photo
+# color-palette-generator
 
 ## About
 
