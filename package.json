@@ -36,11 +36,13 @@
     ]
   },
   "devDependencies": {
-    "@hpe/project-scripts": "^1.0.3",
+    "@babel/eslint-parser": "^7.18.9",
     "add": "^2.0.6",
-    "eslint": "^5.23.0",
+    "eslint": "^8.23.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx": "^0.1.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
     "exact": "^0.8.0",

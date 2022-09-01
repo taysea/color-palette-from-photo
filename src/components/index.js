@@ -7,5 +7,4 @@ export { default as Palette } from './Palette';
 export { default as ScrollToTop } from './ScrollToTop';
 export { default as SearchForm } from './SearchForm';
 export { default as Show } from './Show';
-export { default as Spinner } from './Spinner';
 export { default as Thumbnail } from './Thumbnail';

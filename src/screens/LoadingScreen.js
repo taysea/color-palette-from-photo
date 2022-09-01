@@ -1,27 +1,11 @@
 import React from 'react';
-import {
-  Box,
-  Layer,
-} from 'grommet';
-
-import {
-  Spinner,
-} from '../components';
+import { Box, Layer, Spinner } from 'grommet';
 
 const LoadingScreen = () => (
-  <Layer
-    animate="false"
-    full
-  >
-    <Box
-      fill
-      justify="center"
-      align="center"
-      gap="medium"
-    >
+  <Layer animate="false" full>
+    <Box fill justify="center" align="center" gap="medium">
       <Spinner />
     </Box>
-
   </Layer>
 );
 

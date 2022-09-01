@@ -4,7 +4,7 @@ import { TextInput, Box, Form, FormField, Button } from 'grommet';
 import { Search } from 'grommet-icons';
 import PropTypes from 'prop-types';
 
-const SearchForm = ({ props }) => {
+const SearchForm = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const history = useHistory();
 

@@ -3,8 +3,8 @@ import { Box, Button, ResponsiveContext, Text } from 'grommet';
 import { ColorExtractor } from 'react-color-extractor';
 import copy from 'copy-to-clipboard';
 import PropTypes from 'prop-types';
-import config from '../config';
 import { Checkmark } from 'grommet-icons';
+import config from '../config';
 
 const STATUSES = {
   LOADING: 'loading',
