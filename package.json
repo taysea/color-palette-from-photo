@@ -1,12 +1,11 @@
 {
-  "name": "photos",
+  "name": "color-palette-from-photo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "copy-to-clipboard": "^3.2.0",
     "grommet": "^2.25.2",
     "grommet-icons": "^4.3.0",
-    "imagesloaded": "^4.1.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-color-extractor": "^1.1.2",
