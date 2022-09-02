@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
-import { TextInput, Box, Form, FormField, Button } from 'grommet';
+import { TextInput, Form } from 'grommet';
 import { Search } from 'grommet-icons';
 import PropTypes from 'prop-types';
 
@@ -25,21 +25,15 @@ const SearchForm = () => {
 
   return (
     <Form onSubmit={onSubmit}>
-      <Box align="center" direction="row" gap="small">
-        <FormField htmlFor="search" name="search">
-          <TextInput
-            type="text"
-            id="search"
-            name="search"
-            value={searchTerm}
-            placeholder="Search Unsplash"
-            onChange={handleInputChange}
-          />
-        </FormField>
-        <Button type="submit">
-          <Search />
-        </Button>
-      </Box>
+      <TextInput
+        type="text"
+        id="search"
+        name="search"
+        value={searchTerm}
+        placeholder="Search Unsplash"
+        onChange={handleInputChange}
+        icon={<Search />}
+      />
     </Form>
   );
 };

@@ -2,6 +2,9 @@ module.exports = {
   parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: false,
+    babelOptions: {
+      presets: ['@babel/preset-react'],
+    },
   },
   extends: ['airbnb', 'plugin:jsx-a11y/recommended', 'prettier'],
   plugins: ['react', 'jsx-a11y', 'react-hooks', 'jsx'],

@@ -15,4 +15,7 @@ export const customTheme = deepMerge(grommet, {
       `,
     },
   },
+  textInput: {
+    extend: 'border-radius: 100px;',
+  },
 });
